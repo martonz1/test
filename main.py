@@ -5,7 +5,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!<ul>a</ul>'
+    env1 = os.getenv('HOME')
+    env2 = os.getenv('X')
+    return f"Hello, World!<ul>{env1}</ul><ul>{env2}</ul>"
 
 
 if __name__ == '__main__':
