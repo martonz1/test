@@ -11,8 +11,15 @@ app = Flask(__name__)
 def hello_world():
     env1 = os.getenv('HOME')
     env2 = os.getenv('X')
-    with open("static/index.html", "r", encoding="utf-8") as f:
-        return f.read()
+
+    f = ""
+    crt_dir = os.getcwd()
+    for item in os.listdir():
+        f = f + item + ","
+
+     returm crt_dir + ":" + f
+     # with open("static/index.html", "r", encoding="utf-8") as f:
+     #   return f.read()
         
     # return f"Hello, aaa!<ul>{env1}</ul><ul>{env2}</ul>"
 
