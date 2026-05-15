@@ -16,8 +16,8 @@ def hello_world():
     crt_dir = os.getcwd()
     for item in os.listdir():
         f = f + item + ","
-
-     returm crt_dir + ":" + f
+    
+    returm crt_dir + ":" + f
      # with open("static/index.html", "r", encoding="utf-8") as f:
      #   return f.read()
         
