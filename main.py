@@ -12,16 +12,9 @@ def hello_world():
     env1 = os.getenv('HOME')
     env2 = os.getenv('X')
 
-    f = ""
     crt_dir = os.path.abspath(os.getcwd())
-    
-    for item in os.listdir(crt_dir + "/static"):
-        f = f + item + ","
-    
-    return crt_dir + ":" + f
-     # with open("static/index.html", "r", encoding="utf-8") as f:
-     #   return f.read()
-        
+    with open(crt_dir + "/statix/index.html", "r", encoding="utf-8") as f:
+        return f.read()
     # return f"Hello, aaa!<ul>{env1}</ul><ul>{env2}</ul>"
 
 
