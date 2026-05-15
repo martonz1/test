@@ -11,7 +11,10 @@ app = Flask(__name__)
 def hello_world():
     env1 = os.getenv('HOME')
     env2 = os.getenv('X')
-    return f"Hello, aaa!<ul>{env1}</ul><ul>{env2}</ul>"
+    with open("static/index.html", "r", encoding="utf-8") as f:
+        return f.read()
+        
+    # return f"Hello, aaa!<ul>{env1}</ul><ul>{env2}</ul>"
 
 
 if __name__ == '__main__':
