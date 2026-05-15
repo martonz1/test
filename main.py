@@ -13,8 +13,9 @@ def hello_world():
     env2 = os.getenv('X')
 
     f = ""
-    crt_dir = os.getcwd()
-    for item in os.listdir():
+    crt_dir = os.path.abspath(os.getcwd())
+    
+    for item in os.listdir(crt_dir + "/static"):
         f = f + item + ","
     
     return crt_dir + ":" + f
