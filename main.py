@@ -24,7 +24,7 @@ def subpages(name):
     """
     The method when landing on the subpages.
     """
-    return render_template(f"{name}.html")
+    return render_template(f"{name}")
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port=80)
