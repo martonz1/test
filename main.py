@@ -19,7 +19,7 @@ def hello_world():
     _ = os.getenv('X') # X variable is pass from Docply, placeholder.
 
     crt_dir = os.path.abspath(os.getcwd())
-    with open(crt_dir + "index.html", "r", encoding="utf-8") as f:
+    with open(crt_dir + "/index.html", "r", encoding="utf-8") as f:
         return f.read()
     # return f"Hello, aaa!<ul>{env1}</ul><ul>{env2}</ul>"
 
