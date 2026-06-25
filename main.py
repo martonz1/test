@@ -20,11 +20,11 @@ def home():
     return render_template("index.html")
 
 @app.route('/subpages/<name>')
-def subpages():
+def subpages(name):
     """
     The method when landing on the subpages.
     """
-    return render_template("{name}.html")
+    return render_template(f"{name}.html")
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port=80)
