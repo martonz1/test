@@ -17,8 +17,14 @@ def home():
     The method when landing on the top page.
     """
     _ = os.getenv('X') # X variable is pass from Docply, placeholder.
-
     return render_template("index.html")
+
+@app.route('/subpages/<name>')
+def subpages():
+    """
+    The method when landing on the subpages.
+    """
+    return render_template("{name}.html")
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port=80)
