@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ITIL 4 Foundation — One Pager</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles_itil4.css') }}">
+<script                src= "{{ url_for('static', filename='js/itil4.js') }}"></script>
+
+</head>
+<body>
+
+<div class="header">
+  <h1>ITIL 4 Foundation // Cheat Sheet</h1>
+  <span class="tagline">// core idea: IT exists to create value — everything else serves that</span>
+</div>
+
+<!-- Row 1: SVS diagram + Dimensions -->
+<div class="grid" style="margin-bottom:12px">
+
+  <!-- SVS -->
+  <div class="card blue">
+    <div class="card-title">Service Value System (SVS) — the factory</div>
+    <div class="svs-diagram">
+      <div class="svs-row">
+        <div class="svs-box input">Demand<br><span class="svs-subtitle">opportunity<br>need</span></div>
+        <div class="arrow"></div>
+        <div class="svs-outer" style="flex:1">
+          <span class="svs-label">SVS</span>
+          <div style="display:flex;gap:5px;margin-bottom:5px">
+            <div class="svs-box gp" style="flex:1">Guiding<br>Principles</div>
+            <div class="svs-box cont" style="flex:1">Governance</div>
+            <div class="svs-box pr" style="flex:1">Practices<br><span class="svs-subtitle">34 total</span></div>
+          </div>
+          <div class="svs-box svc" style="width:100%;margin-bottom:5px">
+            Service Value Chain (SVC)
+            <div class="svs-subtitle">Plan  Engage  Design  Build  Deliver  Support</div>
+          </div>
+          <div class="svs-box" style="width:100%;background:var(--green-bg);border-color:var(--green);color:var(--green)">
+            Continual Improvement
+          </div>
+        </div>
+        <div class="arrow"></div>
+        <div class="svs-box output">Value<br><span class="svs-subtitle">outcomes<br>for users</span></div>
+      </div>
+    </div>
+
+    <!-- SVC detail -->
+    <div style="margin-top:10px">
+      <div style="font-size:10px;color:var(--muted);margin-bottom:5px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.08em">Service Value Chain activities</div>
+      <div class="svc-chain">
+        <div class="svc-step">Plan<div class="sub">what &amp; why</div></div>
+        <div class="svc-step">Engage<div class="sub">align people</div></div>
+        <div class="svc-step">Design<div class="sub">how</div></div>
+        <div class="svc-step">Obtain/<br>Build<div class="sub">make it</div></div>
+        <div class="svc-step">Deliver &amp;<br>Support<div class="sub">run it</div></div>
+      </div>
+      <div class="svc-improve"> Continual Improvement — wraps everything, always asking: can we do this better?</div>
+    </div>
+  </div>
+
+  <!-- Right column: Dimensions + Key Terms -->
+  <div style="display:flex;flex-direction:column;gap:12px">
+
+    <!-- 4 Dimensions -->
+    <div class="card yellow">
+      <div class="card-title">4 Dimensions — lenses to apply to every service</div>
+      <div class="dims">
+        <div class="dim-box">
+          <span class="dim-icon"></span>
+          <div class="dim-name">Organizations &amp; People</div>
+          <div class="dim-q">Who does what? Right skills, right roles?</div>
+        </div>
+        <div class="dim-box">
+          <span class="dim-icon"></span>
+          <div class="dim-name">Information &amp; Technology</div>
+          <div class="dim-q">What data, tools, infra does this need?</div>
+        </div>
+        <div class="dim-box">
+          <span class="dim-icon"></span>
+          <div class="dim-name">Partners &amp; Suppliers</div>
+          <div class="dim-q">What do we outsource? Who depends on us?</div>
+        </div>
+        <div class="dim-box">
+          <span class="dim-icon"></span>
+          <div class="dim-name">Value Streams &amp; Processes</div>
+          <div class="dim-q">How does work flow? Where is value created?</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Terms -->
+    <div class="card" style="border-color:#3a3020">
+      <div class="card-title" style="color:var(--yellow)">Key Terms</div>
+      <div class="terms">
+        <div class="term">
+          <div class="tname">Service</div>
+          <div class="tdef">A means of enabling value co-creation without the customer managing costs/risks directly</div>
+        </div>
+        <div class="term">
+          <div class="tname">Value</div>
+          <div class="tdef">Perceived benefits relative to costs. Always defined by the customer, not the provider</div>
+        </div>
+        <div class="term">
+          <div class="tname">Outcome vs Output</div>
+          <div class="tdef">Output = the thing delivered. Outcome = the result it enables. ITIL cares about outcomes</div>
+        </div>
+        <div class="term">
+          <div class="tname">Utility</div>
+          <div class="tdef">"Fit for purpose" — does it do what it's supposed to do?</div>
+        </div>
+        <div class="term">
+          <div class="tname">Warranty</div>
+          <div class="tdef">"Fit for use" — is it available, reliable, secure enough?</div>
+        </div>
+        <div class="term">
+          <div class="tname">CI/CD vs ITIL</div>
+          <div class="tdef">Change management = ITIL's way to ship safely without breaking live services</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Row 2: Principles + Practices -->
+<div class="grid" style="margin-bottom:12px">
+
+  <!-- 7 Guiding Principles -->
+  <div class="card orange">
+    <div class="card-title">7 Guiding Principles — always apply, regardless of context</div>
+    <div class="principles">
+      <div class="principle">
+        <strong>Focus on value</strong>
+        <span>Every action must trace back to value for someone</span>
+      </div>
+      <div class="principle">
+        <strong>Start where you are</strong>
+        <span>Don't reinvent. Assess what exists first, build on it</span>
+      </div>
+      <div class="principle">
+        <strong>Progress iteratively + feedback</strong>
+        <span>Small steps, frequent feedback loops. Don't big-bang</span>
+      </div>
+      <div class="principle">
+        <strong>Collaborate + promote visibility</strong>
+        <span>Work together, share info. Hidden work = hidden risk</span>
+      </div>
+      <div class="principle">
+        <strong>Think &amp; work holistically</strong>
+        <span>No silo thinking. Every part affects the whole system</span>
+      </div>
+      <div class="principle">
+        <strong>Keep it simple &amp; practical</strong>
+        <span>If it doesn't add value, remove it. Complexity is waste</span>
+      </div>
+      <div class="principle" style="grid-column:span 2">
+        <strong>Optimize &amp; automate</strong>
+        <span>Optimize the process first, then automate it. Don't automate chaos</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Practices -->
+  <div class="card purple">
+    <div class="card-title">Key Practices (14 of 34 — the ones you'll use daily)</div>
+    <div class="practices">
+      <div class="practice">
+        <div class="pname">Incident Management</div>
+        <div class="pdesc">Service broken  restore it fast. Log, triage, fix. <em>e.g. server down at 3am</em></div>
+      </div>
+      <div class="practice">
+        <div class="pname">Problem Management</div>
+        <div class="pdesc">Find root cause so incident never recurs. <em>e.g. why does the server keep crashing?</em></div>
+      </div>
+      <div class="practice">
+        <div class="pname">Change Enablement</div>
+        <div class="pdesc">Control how changes go to production. Avoid breaking live services</div>
+      </div>
+      <div class="practice">
+        <div class="pname">Service Desk</div>
+        <div class="pdesc">Single point of contact. Captures all requests + incidents from users</div>
+      </div>
+      <div class="practice">
+        <div class="pname">Service Request Mgmt</div>
+        <div class="pdesc">Handle standard user requests. <em>e.g. new laptop, account access</em></div>
+      </div>
+      <div class="practice">
+        <div class="pname">Event Management</div>
+        <div class="pdesc">Monitor and respond to system events. <em>e.g. planned downtime, alerts</em></div>
+      </div>
+      <div class="practice">
+        <div class="pname">IT Asset Management</div>
+        <div class="pdesc">Track all hardware/software assets. Know what you own and where</div>
+      </div>
+      <div class="practice">
+        <div class="pname">Relationship Management</div>
+        <div class="pdesc">Manage relationships with customers, users, stakeholders</div>
+      </div>
+      <div class="practice">
+        <div class="pname">Supplier Management</div>
+        <div class="pdesc">Govern third-party providers, contracts, performance</div>
+      </div>
+      <div class="practice">
+        <div class="pname">Info Security Mgmt</div>
+        <div class="pdesc">Protect confidentiality, integrity, availability of data</div>
+      </div>
+      <div class="practice">
+        <div class="pname">Continual Improvement</div>
+        <div class="pdesc">Structured approach to improving services and practices over time</div>
+      </div>
+      <div class="practice">
+        <div class="pname">Monitoring &amp; Event Mgmt</div>
+        <div class="pdesc">Observe services systematically. Detect issues before users do</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Row 3: Incident vs Problem + Value chain example -->
+<div class="grid-3" style="margin-bottom:12px">
+
+  <!-- Incident vs Problem -->
+  <div class="card">
+    <div class="card-title" style="color:var(--red)">Incident vs Problem — most confused pair</div>
+    <div class="compare">
+      <div class="compare-box inc">
+        <div class="clabel"> Incident</div>
+        <p>Unplanned interruption. Fix it now. Speed matters more than root cause.</p>
+        <div class="eg">"Login is broken — restore it"</div>
+      </div>
+      <div class="compare-box prb">
+        <div class="clabel"> Problem</div>
+        <p>Unknown root cause of one or more incidents. Investigate properly.</p>
+        <div class="eg">"Why does login keep breaking?"</div>
+      </div>
+    </div>
+    <div style="margin-top:8px;font-size:10px;color:var(--muted);padding:5px 8px;background:var(--surface2);border-radius:4px">
+      A Problem can exist without an active Incident (proactive problem management). A known workaround = <strong style="color:var(--text)">Known Error</strong>.
+    </div>
+  </div>
+
+  <!-- Value flow example -->
+  <div class="card green">
+    <div class="card-title">End-to-end value flow example</div>
+    <ul>
+      <li><strong>User need:</strong> "I need a dev environment" <span class="eg">(demand)</span></li>
+      <li><strong>Plan:</strong> what env, what stack, what SLA?</li>
+      <li><strong>Engage:</strong> dev team, security, cloud supplier aligned</li>
+      <li><strong>Design:</strong> spec the environment, security rules</li>
+      <li><strong>Obtain/Build:</strong> spin up cloud VMs, configure CI/CD</li>
+      <li><strong>Deliver &amp; Support:</strong> hand over, document, monitor</li>
+      <li><strong>Value delivered:</strong> dev can build and ship code <span class="eg">(outcome)</span></li>
+      <li><strong>Improve:</strong> next time, automate provisioning</li>
+    </ul>
+  </div>
+
+  <!-- Exam tips -->
+  <div class="card" style="border-color:#2a3050">
+    <div class="card-title" style="color:var(--muted)">// Foundation Exam — what they test</div>
+    <ul>
+      <li>Know all <strong>7 guiding principles</strong> by name</li>
+      <li>Know all <strong>4 dimensions</strong> — apply them to scenarios</li>
+      <li>Know <strong>6 SVC activities</strong> + what Improve means</li>
+      <li>Distinguish <strong>incident vs problem</strong> vs request</li>
+      <li>Understand <strong>utility + warranty</strong> — both needed for value</li>
+      <li>Know difference: <strong>output vs outcome</strong></li>
+      <li><strong>34 practices</strong> exist — know ~15 well for the exam</li>
+      <li>SVS components: principles, governance, SVC, practices, improvement</li>
+      <li>40 questions, 65% to pass, 60 min, closed book</li>
+    </ul>
+    <div style="margin-top:8px;padding:5px 8px;background:var(--blue-bg);border-radius:4px;font-size:10px;color:var(--blue)">
+      Tip: exam scenarios always have a "most correct" answer. Map every option back to: <em>does this create value?</em>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <span>// ITIL® is a registered trademark of AXELOS Limited</span>
+  <span>ITIL 4 Foundation · 2024 edition · itil4.axelos.com</span>
+</div>
+
+</body>
+</html>
