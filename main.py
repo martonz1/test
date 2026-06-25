@@ -16,7 +16,7 @@ def hello_world():
     """
     The method when landing on the top page.
     """
-    _ = os.getenv('X') # X variable is pass from Docply
+    _ = os.getenv('X') # X variable is pass from Docply, placeholder
 
     crt_dir = os.path.abspath(os.getcwd())
     with open(crt_dir + "index.html", "r", encoding="utf-8") as f:
