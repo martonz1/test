@@ -1,0 +1,17 @@
+name: UNICODE check for all htm* files
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # Browse through all htm* files and see if they can be converted
+    - uses: actions/checkout@v4
+    - name: Check all files are OK wrt encoding    
+      run: |
+        while $file_to_check in $(git ls-files '*.htm*')
+        echo Processing $file_to_check
+        do iconv -f utf-8 -t utf-8 -c file_to_test
+        test $? == 0
+        done
