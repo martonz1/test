@@ -17,19 +17,15 @@ jobs:
         do echo Processing $file_to_check
                 
         iconv -f utf-8 -t utf-8 $file_to_check > /dev/null 2>error_text       
-        echo return code = $? and error text:
-        cat error_text
-        echo ====
-        
-        if [ -s error_text ]
+        if [ $? -eq 0 ]
         then  echo OK
         else
         echo NOK
+        cat error_text
         all_files_OK=1
         fi
         done
         set -e # don't continue on error
         
-        test $all_files_OK == 0
-        
+        test $all_files_OK == 0     
         
