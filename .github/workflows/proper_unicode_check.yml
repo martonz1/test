@@ -12,6 +12,6 @@ jobs:
       run: |
         while $file_to_check in $(git ls-files '*.htm*')
         echo Processing $file_to_check
-        do iconv -f utf-8 -t utf-8 -c file_to_test
+        do iconv -f utf-8 -t utf-8 -c $file_to_test
         test $? == 0
         done
