@@ -13,10 +13,11 @@ jobs:
         all_files_OK=0
         for file_to_check in $(git ls-files '*.htm*')
         do echo Processing $file_to_check
-        xxd $file_to_check
-        iconv -f utf-8 -t utf-8 $file_to_check > /dev/null        
-        echo $?
-        if [ $? -eq 0 ]
+        iconv -f utf-8 -t utf-8 $file_to_check > /dev/null 2>error_text       
+        echo return code = $? and error text:
+        cat error_text
+        echo ====
+        if [ -s error_text ]
         then  echo OK
         else
         echo NOK
