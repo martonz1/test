@@ -1,0 +1,311 @@
+  :root {
+    --bg:        #f5f0e8;
+    --paper:     #fdfaf4;
+    --ink:       #2c2416;
+    --ink-light: #7a6a52;
+    --accent:    #4a7c59;
+    --accent-2:  #c8a96e;
+    --border:    #e0d8c8;
+    --card-bg:   #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Lora', Georgia, serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* subtle grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /*  HEADER  */
+  header {
+    padding: 28px 40px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--paper);
+    position: relative;
+    z-index: 1;
+  }
+
+  .logo-leaf {
+    font-size: 22px;
+  }
+
+  .logo-text {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: -0.3px;
+  }
+
+  .logo-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-left: 2px;
+  }
+
+  /*  MAIN  */
+  main {
+    flex: 1;
+    max-width: 780px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .intro {
+    margin-bottom: 40px;
+  }
+
+  .intro h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+
+  .intro h1 em {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .intro p {
+    font-size: 15px;
+    color: var(--ink-light);
+    line-height: 1.7;
+  }
+
+  /*  LESSONS GRID  */
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 16px;
+  }
+
+  .lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 48px;
+  }
+
+  .lesson-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px 22px;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lesson-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--accent);
+    transform: scaleY(0);
+    transition: transform 0.2s;
+    transform-origin: bottom;
+  }
+
+  .lesson-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74,124,89,0.1);
+  }
+
+  .lesson-card:hover::before { transform: scaleY(1); }
+
+  .lesson-card.active {
+    border-color: var(--accent);
+    background: #f0f7f2;
+  }
+
+  .lesson-card.active::before { transform: scaleY(1); }
+
+  .lesson-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .lesson-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-light);
+    letter-spacing: 0.5px;
+  }
+
+  /*  PRACTICE AREA  */
+  .practice-area {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 36px 40px;
+    display: none;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .practice-area.visible { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .practice-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+  }
+
+  .word-display {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .word-original {
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 6px;
+    letter-spacing: -1px;
+  }
+
+  .word-hint {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-light);
+    letter-spacing: 1px;
+  }
+
+  .word-translation {
+    font-size: 28px;
+    font-style: italic;
+    color: var(--accent);
+    margin-top: 20px;
+    min-height: 40px;
+    transition: opacity 0.3s;
+  }
+
+  .word-translation.hidden { opacity: 0; }
+
+  .btn-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 28px;
+  }
+
+  button {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    padding: 11px 28px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+    font-weight: 600;
+  }
+
+  .btn-primary:hover {
+    background: #3d6b4c;
+    border-color: #3d6b4c;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(74,124,89,0.25);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink-light);
+  }
+
+  .btn-secondary:hover {
+    background: var(--border);
+    color: var(--ink);
+  }
+
+  /*  WORD LIST  */
+  .word-list {
+    margin-top: 32px;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+  }
+
+  .word-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border);
+    font-size: 14px;
+    animation: fadeIn 0.2s ease both;
+  }
+
+  .word-row:last-child { border-bottom: none; }
+
+  .word-row .w-nl { font-weight: 600; color: var(--ink); }
+  .word-row .w-en { color: var(--ink-light); font-style: italic; }
+
+  /*  STATUS  */
+  #status {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-light);
+    text-align: center;
+    margin-top: 16px;
+    min-height: 18px;
+  }
+
+  /*  LOADING  */
+  .loading-dots::after {
+    content: '...';
+    animation: dots 1s steps(3, end) infinite;
+  }
+
+  @keyframes dots {
+    0%   { content: '.'; }
+    33%  { content: '..'; }
+    66%  { content: '...'; }
+  }

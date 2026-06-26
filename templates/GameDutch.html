@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinguaLeaf</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/game_dutch.css') }}">
+<script                src= "{{ url_for('static', filename='js/game_dutch.js') }}" defer></script>
+
+</head>
+<body>
+
+<header>
+  <span class="logo-leaf"></span>
+  <div>
+    <div class="logo-text">LinguaLeaf</div>
+    <div class="logo-sub">Dutch Hello World</div>
+  </div>
+</header>
+
+<main>
+  <div class="intro">
+    <h1>Learn Dutch,<br><em>one word at a time.</em></h1>
+    <p>Pick a lesson below to start practising. Your Python backend serves the words.</p>
+  </div>
+
+  <div class="section-label">Choose a lesson</div>
+  <div class="lessons-grid" id="lessonsGrid">
+    <div class="lesson-card" style="opacity:0.5">
+      <div class="lesson-title loading-dots">Loading</div>
+      <div class="lesson-meta">connecting to backend</div>
+    </div>
+  </div>
+
+  <div class="practice-area" id="practiceArea">
+    <div class="practice-label" id="practiceLabel">Practice</div>
+
+    <div class="word-display">
+      <div class="word-original" id="wordOriginal"></div>
+      <div class="word-hint">Dutch word</div>
+      <div class="word-translation hidden" id="wordTranslation"></div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-secondary" onclick="revealTranslation()">Show translation</button>
+      <button class="btn-primary" onclick="nextWord()">Next word </button>
+    </div>
+
+    <div id="status"></div>
+
+    <div class="word-list" id="wordList"></div>
+  </div>
+</main>
+
+</body>
+</html>
