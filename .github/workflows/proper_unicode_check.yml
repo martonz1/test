@@ -14,6 +14,7 @@ jobs:
         for file_to_check in $(git ls-files '*.htm*')
         do echo Processing $file_to_check
         iconv -f utf-8 -t utf-8 -c $file_to_check > /dev/null
+        echo $?
         if [ $? -eq 0 ]
         then  echo OK
         else
