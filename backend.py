@@ -1,8 +1,13 @@
 # -*- coding: utf-8 -*-
+
+"""
+This is the backend for the game, built with FastAPI.
+"""
+
+import random
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-import random
 
 app = FastAPI()
 
