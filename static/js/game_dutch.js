@@ -1,4 +1,4 @@
-  const API = 'http://localhost:4000/api';
+  const API = 'http://0.0.0.0:4000/api';
   let currentLesson = null;
   let translationVisible = false;
 
