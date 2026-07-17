@@ -1,4 +1,4 @@
-  const API = `${window.location.protocol}//${window.location.hostname}:4000/api`;
+  const API = `http://${window.location.hostname}:4000/api`;
   let currentLesson = null;
   let translationVisible = false;
 
